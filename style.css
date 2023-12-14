@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+    /******* Primary colors *********/
+    --primary1: hsl(0, 100%, 67%);
+    /* Light red  */
+    --primary2: hsl(39, 100%, 56%);
+    /* Orangey yellow */
+    --primary3: hsl(166, 100%, 37%);
+    /* Green teal */
+    --primary4: hsl(234, 85%, 45%);
+    /* Cobalt blue  */
+
+    /****** Gradient colors******/
+    --gradient1: hsl(252, 100%, 67%);
+    /* Light slate blue (for background) */
+    --gradient2: hsl(241, 81%, 54%);
+    /* Light royal blue (for background) */
+    --gradient3: hsla(256, 72%, 46%, 1);
+    /* Violet blue (for circle) */
+    --gradient4: hsla(241, 72%, 46%, 0);
+    /* Persian blue (for circle) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: #fff;
+    height: 100vh;
+}
+
+.results-container {
+    --shadow: hsl(234, 85%, 45%, 0.3);
+    max-width: 56rem;
+    height: auto;
+    justify-content: space-between;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 15px 17px 30px var(--shadow);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.final-result,
+.summary {
+    flex: 1;
+    height: 33rem;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.final-result {
+    background: linear-gradient(to bottom, var(--gradient1), var(--gradient2));
+}
+
+.final-grid,
+.summary-grid {
+    display: grid;
+}
+/* Final grid */
+.final-grid {
+    grid-template-rows: 100px 170px 100px 110px;
+    color: #fff;
+    text-align: center;
+}
+
+.circ {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(to top, var(--gradient4), var(--gradient3));
+    line-height: 1;
+    padding-top: 2rem;
+    margin: auto;
+}
+
+.final-grid .title {
+    line-height: 6;
+}
+
+.circ span:nth-of-type(1) {
+    font-size: 3em;
+}
+
+.circ span:nth-of-type(2),
+.result .score span {
+    color: rgb(0, 0, 0,0.4)
+}
+.rate{
+    align-self: center;
+    font-size: 1.2em;
+}
+.details{
+    font-size: 1.2em;
+}
+/* Summary grid */
+.summary-grid {
+    grid-template-rows: 70px repeat(4, 40px);
+    height: 20rem;
+    width: 20rem;
+    margin: 1.5rem auto;
+    row-gap: 1rem;
+}
+.summary-grid .title h3{
+    margin-left: 10px;
+}
+.reaction {
+    --background1: hsl(0, 100%, 67%, 0.2);
+    line-height: 2;
+    border-radius: 10px;
+    background-color: var(--background1);
+}
+
+.memory {
+    --background2: hsl(39, 100%, 56%, 0.2);
+    line-height: 2;
+    border-radius: 10px;
+    background-color: var(--background2);
+}
+
+.verbal {
+    --background3: hsl(166, 100%, 37%, 0.2);
+    line-height: 2;
+    border-radius: 10px;
+    background-color: var(--background3);
+}
+
+.visual {
+    --background4: hsl(234, 85%, 45%, 0.2);
+    line-height: 2;
+    border-radius: 10px;
+    background-color: var(--background4);
+}
+
+.reaction .ability:nth-child(1) {
+    color: var(--primary1);
+}
+
+.memory .ability:nth-child(1) {
+    color: var(--primary2);
+}
+
+.verbal .ability:nth-child(1) {
+    color: var(--primary3);
+}
+
+.visual .ability:nth-child(1) {
+    color: var(--primary4);
+}
+
+.result,
+.ability {
+    justify-content: space-evenly;
+}
+
+.ability img {
+    margin-top: 8px;
+    margin-right: 6px;
+}
+.continue{
+    width: 100%;
+    text-align: center;
+}
+.continue .continue-btn{
+    width: 230px;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    background-color: #333;
+
+}
+.continue .continue-btn:hover{
+    background: linear-gradient(to bottom, var(--gradient1), var(--gradient2));
+
+}
+@media screen and (max-width: 1440px) and (min-width: 769px) {}
+
+@media screen and (max-width:768px) and (min-width: 375px) {
+    body{
+        overflow-x: hidden;
+    }
+    .results-container {
+        flex-direction: column;
+    }
+
+
+}
+
+@media screen and (max-width: 375px) {
+    body{
+        overflow-x: hidden;
+    }
+    .results-container {
+        flex-direction: column;
+    }
+
+}
